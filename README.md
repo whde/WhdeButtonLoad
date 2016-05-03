@@ -1,8 +1,9 @@
 ## WhdeButtonLoad
 - 当程序在点击UIButton之后请求网络数据，请求网络需要时间，在这个时间里，我们需要做到更极致的用户体验;
 - 使用<code>**WhdeButtonLoad**</code>将会在这时间里会在Button上显示LoadingView，在完成之后，会恢复原状态;
-![](https://raw.githubusercontent.com/whde/WhdeButtonLoad/master/Screen.gif)
-
+<p al="center">
+<image src="https://raw.githubusercontent.com/whde/WhdeButtonLoad/master/Screen.gif" width=150>
+</p>
 ```objective-c
 pod 'WhdeButtonLoad', '~> 1.0.0'
 ```
