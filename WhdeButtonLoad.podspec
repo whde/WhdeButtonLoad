@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
-s.name          = "WhdeUIButtonLoad"
-s.version       = "1.0.4"
+s.name          = "WhdeButtonLoad"
+s.version       = "1.0.0"
 s.summary       = "iOS UIButton with Loadding State."
-s.homepage      = "https://github.com/whde/WhdeLocalized"
+s.homepage      = "https://github.com/whde/WhdeButtonLoad"
 s.license       = 'MIT'
 s.author        = { "Whde" => "460290973@qq.com" }
 s.platform      = :ios, "7.0"
-s.source        = { :git => "https://github.com/whde/WhdeLocalized.git", :tag => s.version.to_s }
-s.source_files  = 'WhdeUIButtonLoad/Calss/*'
+s.source        = { :git => "https://github.com/whde/WhdeButtonLoad.git", :tag => s.version.to_s }
+s.source_files  = 'WhdeButtonLoad/Calss/*'
 s.frameworks    = 'Foundation'
 s.requires_arc  = true
 s.description   = <<-DESC
