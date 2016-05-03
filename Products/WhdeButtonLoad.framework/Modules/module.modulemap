@@ -1,0 +1,6 @@
+framework module WhdeButtonLoad {
+  umbrella header "WhdeButtonLoad.h"
+
+  export *
+  module * { export * }
+}
