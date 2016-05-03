@@ -7,7 +7,7 @@ s.license       = 'MIT'
 s.author        = { "Whde" => "460290973@qq.com" }
 s.platform      = :ios, "7.0"
 s.source        = { :git => "https://github.com/whde/WhdeButtonLoad.git", :tag => s.version.to_s }
-s.source_files  = 'WhdeButtonLoad/Calss/*'
+s.source_files  = 'WhdeButtonLoad/Class/*'
 s.frameworks    = 'Foundation'
 s.requires_arc  = true
 s.description   = <<-DESC
