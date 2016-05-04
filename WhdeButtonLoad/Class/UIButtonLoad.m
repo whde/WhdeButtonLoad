@@ -18,6 +18,9 @@
     UIImage *_backgroudImage;
     
     CAShapeLayer *_LoadingShapeLayer;
+    
+    BOOL _began;
+    BOOL _callFinished;
 }
 
 - (void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents NS_DEPRECATED_IOS(2_0, 3_0, "在 UIButtonLoad 使用 addAction: 方法替代") {
@@ -48,10 +51,15 @@
     } else {
         _action = nil;
     }
+    _began = NO;
+    _callFinished = NO;
     [super addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)action:(UIButtonLoad *)btn {
+    if (_callFinished) {
+        return;
+    }
     if (self.titleLabel.alpha!=1) {
         return;
     }
@@ -100,6 +108,10 @@
                         super.frame = rect;
                         super.center = _center;
                         [self loading];
+                        _began = YES;
+                        if (_callFinished) {
+                            [self performSelector:@selector(finished) withObject:nil afterDelay:1];
+                        }
                     }];
                 }];
             }];
@@ -175,12 +187,17 @@
 }
 
 - (void)finished {
+    _callFinished = YES;
+    if (!_began) {
+        return;
+    }
+    _began = NO;
     [self stopAnimation];
 }
 
 - (void)stopAnimation {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:0.1 animations:^{
+        [UIView animateWithDuration:0.2 animations:^{
             if (_LoadingShapeLayer.superlayer) {
                 [_LoadingShapeLayer removeAnimationForKey:@"transform.rotation"];
                 [_LoadingShapeLayer removeAnimationForKey:@"animations"];
@@ -207,6 +224,7 @@
                         }
                     } completion:^(BOOL finished) {
                         super.layer.masksToBounds = _masksToBounds;
+                        _callFinished = NO;
                     }];
                 }];
             }];

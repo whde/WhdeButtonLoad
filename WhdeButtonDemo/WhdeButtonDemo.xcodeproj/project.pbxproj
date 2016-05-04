@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F830F4D91CD890500084C6FE /* WhdeButtonLoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F830F4D81CD890500084C6FE /* WhdeButtonLoad.framework */; };
+		F84814751CD8B150003672D5 /* UIButtonLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = F84814741CD8B150003672D5 /* UIButtonLoad.m */; };
 		F874666A1CD3393600B779CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F87466691CD3393600B779CE /* main.m */; };
 		F874666D1CD3393600B779CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F874666C1CD3393600B779CE /* AppDelegate.m */; };
 		F87466701CD3393600B779CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F874666F1CD3393600B779CE /* ViewController.m */; };
@@ -18,7 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F830F4D81CD890500084C6FE /* WhdeButtonLoad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WhdeButtonLoad.framework; sourceTree = "<group>"; };
+		F84814731CD8B150003672D5 /* UIButtonLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonLoad.h; sourceTree = "<group>"; };
+		F84814741CD8B150003672D5 /* UIButtonLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonLoad.m; sourceTree = "<group>"; };
 		F87466651CD3393600B779CE /* WhdeButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhdeButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87466691CD3393600B779CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F874666B1CD3393600B779CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -37,13 +38,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F830F4D91CD890500084C6FE /* WhdeButtonLoad.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F84814721CD8B150003672D5 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				F84814731CD8B150003672D5 /* UIButtonLoad.h */,
+				F84814741CD8B150003672D5 /* UIButtonLoad.m */,
+			);
+			name = Class;
+			path = ../../WhdeButtonLoad/Class;
+			sourceTree = "<group>";
+		};
 		F874665C1CD3393600B779CE = {
 			isa = PBXGroup;
 			children = (
@@ -63,7 +73,7 @@
 		F87466671CD3393600B779CE /* WhdeButtonDemo */ = {
 			isa = PBXGroup;
 			children = (
-				F830F4D81CD890500084C6FE /* WhdeButtonLoad.framework */,
+				F84814721CD8B150003672D5 /* Class */,
 				F874666B1CD3393600B779CE /* AppDelegate.h */,
 				F874666C1CD3393600B779CE /* AppDelegate.m */,
 				F874666E1CD3393600B779CE /* ViewController.h */,
@@ -160,6 +170,7 @@
 				F87466701CD3393600B779CE /* ViewController.m in Sources */,
 				F874666D1CD3393600B779CE /* AppDelegate.m in Sources */,
 				F874666A1CD3393600B779CE /* main.m in Sources */,
+				F84814751CD8B150003672D5 /* UIButtonLoad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

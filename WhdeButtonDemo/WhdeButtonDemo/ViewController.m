@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <WhdeButtonLoad/WhdeButtonLoad.h>
+#import "UIButtonLoad.h"
 @interface ViewController ()
 
 @end
@@ -19,23 +19,24 @@
     // Do any additional setup after loading the view, typically from a nib.
     UIButtonLoad *btn = [UIButtonLoad buttonWithType:UIButtonTypeCustom];
     [btn addAction:^(UIButtonLoad *btn) {
-        NSLog(@"start");
-        __block int timeout= 2;
-        __block UIButtonLoad *wsendCodeBtn = btn;
-        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
-        dispatch_source_set_timer(timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0);
-        dispatch_source_set_event_handler(timer, ^{
-            if(timeout< 0){
-                dispatch_source_cancel(timer);
-                [wsendCodeBtn finished];
-                NSLog(@"finished");
-            } else {
-                NSLog(@"%d", timeout);
-                timeout--;
-            }
-        });
-        dispatch_resume(timer);
+        [btn finished];
+//        NSLog(@"start");
+//        __block int timeout= 2;
+//        __block UIButtonLoad *wsendCodeBtn = btn;
+//        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//        dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+//        dispatch_source_set_timer(timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0);
+//        dispatch_source_set_event_handler(timer, ^{
+//            if(timeout< 0){
+//                dispatch_source_cancel(timer);
+//                [wsendCodeBtn finished];
+//                NSLog(@"finished");
+//            } else {
+//                NSLog(@"%d", timeout);
+//                timeout--;
+//            }
+//        });
+//        dispatch_resume(timer);
     }];
     [btn setBackgroundImage:[UIImage imageNamed:@"29pt@3x"] forState:UIControlStateNormal];
     btn.frame = CGRectMake(0, 0, 300, 150);
